@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Торговый Центр</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="logo">
+            <h1>Торговый Центр</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Первая страница.html">Главная</a></li>
+                <li><a href="Страница Магазинов.html">Магазины</a></li>
+                <li><a href="Страница событий и акций.html">События</a></li>
+                <li><a href="Страница контактов.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Секция контактов -->
+    <section class="contact-info">
+        <h2>Свяжитесь с нами</h2>
+        <p>Адрес: г.Худжанд, ул. И.Сомони, 123</p>
+        <p>Телефон: +992 788-78-40-40</p>
+        <p>Email: info@shoppingcenter.ru</p>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section class="contact-form">
+        <h2 class="sms">Оставьте сообщение</h2>
+        <form action="submit_form.php" method="POST">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <!-- Карта торгового центра -->
+    <section class="location-map">
+        <h2 class="map">Найдите нас на карте</h2>
+        <img src="img/OIP.jpg" alt="Карта расположения торгового центра">
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-info">
+            <p>Адрес: г.Худжанд, ул. И.Сомони, 123</p>
+            <p>Email: info@shoppingcenter.ru</p>
+            <p>Социальные сети: <a  class="contacts" href="https://t.me/dilshodjon_avezov">Telegram</a> | <a href="https://www.instagram.com/dilshodjon_avezov?igsh=MTV3YTVoY3JjNjF1aw==">Instagram</a></p>
+        </div>
+        <p>&copy; 2024 Торговый Центр</p>
+    </footer>
+</body>
+</html>

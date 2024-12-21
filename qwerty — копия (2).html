@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Login Form</title>
+  <link rel="stylesheet" href="qwerty — копия.css">
+</head>
+<body>
+  <div class="container">
+    <div class="background">
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <form class="login-form" onsubmit="return handleSubmit(event);">
+      <h2>Добро пожаловать</h2>
+      <div class="input-box">
+        <input type="text" required>
+        <label>Имя пользователя</label>
+      </div>
+      <div class="input-box">
+        <input type="password" required>
+        <label>Пароль</label>
+      </div>
+      <button type="submit" class="btn">Вход</button>
+      <p class="forgot">Забыли пароль? <a href="#">Нажмите здесь!</a></p>
+    </form>
+  </div>
+  <script src="qwerty.js"></script>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Предотвращаем стандартное поведение формы
+      // Здесь вы можете добавить проверку данных, если необходимо
+
+      // Перенаправление на другую страницу
+      window.location.href = 'Первая страница.html'; // Используйте относительный путь
+    }
+  </script>
+</body>
+</html>

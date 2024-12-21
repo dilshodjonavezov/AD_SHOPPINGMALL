@@ -1,0 +1,694 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    user-select: none;
+    
+    background: url("img/Фон.jpg") ;
+    
+    background-size: 100%;
+background-position: center;
+background-repeat: no-repeat;
+}
+.AD{
+    font-size: 100px;
+}
+.Icons img{
+    border-radius: 50%;
+}
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.news {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-item {
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.news-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.banner {
+    
+    background: url('banner.jpg') no-repeat center center/cover;
+    height: 300px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h2 {
+    font-size: 3em;
+}
+
+.categories {
+    padding: 20px;
+    text-align: center;
+    color: white;
+
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    color: rgb(0, 0, 0);
+
+}
+
+.category-item {
+    background: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: background 0.3s ease;
+    border-radius: 20px;
+}
+
+.category-item:hover {
+    background: #ddd;
+}
+
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+.mgFooter{
+    margin-top: 270px;
+}
+.footer-info p {
+    margin-bottom: 10px;
+}
+
+.footer-info a {
+    color: #fff;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.products h2{
+    color: #ffffff;
+    text-align: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.filter {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+.filter h2 {
+    margin-bottom: 10px;
+}
+.contacts{
+    color: #fff;
+}
+.store-list h2 {
+    color: white;
+    
+}
+.store-list {
+    padding: 20px;
+    text-align: center;
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+
+.store-item {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: background 0.3s ease;
+    border-radius: 20px;
+    height: 120px;
+}
+
+.store-item:hover {
+    background: #f0f0f0;
+}
+
+.mall-map {
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-info a {
+    color: #fff;
+    text-decoration: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+header .logo{
+    margin-left: 2%;
+}
+header .logo h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.filter {
+    color: rgb(0, 0, 0);
+
+   padding: 20px;
+    text-align: center;
+}
+
+.filter h2 {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.store-list {
+    padding: 20px;
+    text-align: center;
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.store-item {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: background 0.3s ease;
+}
+
+.store-item:hover {
+    background: #f0f0f0;
+}
+
+.mall-map {
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+}
+
+.footer-info a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.events, .rewq{
+    padding: 20px;
+    text-align: center;
+    color: #fff; 
+}
+.events, .qwer{
+    padding: 20px;
+    text-align: center;
+    color: #fff; }
+.events, .promotions {
+    padding: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.event-item, .promo-item {
+    background: #f4f4f4;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: background 0.3s ease;
+    border-radius: 20px;
+}
+
+.event-item:hover, .promo-item:hover {
+    background: #ddd;
+}
+
+.wert {
+    margin-bottom: 20px;
+    color: #000000;
+}
+.contact-info {
+    padding: 20px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.contact-form {
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-form form {
+    display: inline-block;
+    text-align: left;
+    max-width: 400px;
+    width: 100%;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+.location-map {
+    padding: 20px;
+    text-align: center;
+}
+
+.location-map img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+.sms{
+    color: #fff;
+}
+.map{
+    color: #fff;
+}
+.electronics {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.electronics h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    border-radius: 20px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    border-radius: 20px;
+
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #444;
+}
+
+.product-card button {
+    padding: 10px 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background: #555;
+}
+.clothes {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.clothes h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.clothes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.clothes-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: transform 0.3s ease;
+}
+
+.clothes-item:hover {
+    transform: scale(1.05);
+}
+
+.clothes-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.clothes-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.clothes-item p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #666;
+}
+
+.clothes-item .price {
+    font-weight: bold;
+    color: #444;
+}
+
+.clothes-item button {
+    padding: 10px 15px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clothes-item button:hover {
+    background: #666;
+}
+.food {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.food h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #228B22;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.food-item {
+    background: #f0fff0;
+    padding: 20px;
+    border: 1px solid #228B22;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.food-item:hover {
+    background: #e6ffe6;
+    transform: scale(1.05);
+}
+
+.food-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.food-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #006400;
+}
+
+.food-item p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #2E8B57;
+}
+
+.food-item .price {
+    font-weight: bold;
+    color: #444;
+}
+
+.food-item button {
+    padding: 10px 15px;
+    background: #228B22;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.food-item button:hover {
+    background: #2E8B57;
+}
+.shoes {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.shoes h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.shoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.shoes-item {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: transform 0.3s ease;
+}
+
+.shoes-item:hover {
+    transform: translateY(-10px);
+}
+
+.shoes-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.shoes-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.shoes-item p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.shoes-item .price {
+    font-weight: bold;
+    color: #444;
+}
+
+.shoes-item button {
+    padding: 10px 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.shoes-item button:hover {
+    background: #555;
+}
