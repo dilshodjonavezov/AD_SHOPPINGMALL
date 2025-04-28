@@ -17,6 +17,7 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="Страница Магазинов.html">Магазины</a></li>
                 <li><a href="Страница событий и акций.html">События</a></li>
+                <li><a href="cart.html">Корзина</a></li>
                 <li><a href="Страница контактов.html">Контакты</a></li>
             </ul>
         </nav>
@@ -31,72 +32,96 @@
                 <h3>Samsung Galaxy S24 Ultra</h3>
                 <p>Смартфон с великолепной камерой и дизайном.</p>
                 <p class="price">Цена: 14999c</p>
-                <button>Добавить в корзину</button>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Samsung Galaxy S24 Ultra', 14999, this)">Добавить в корзину</button>
+                </div>
             </div>
             <div class="product-card">
                 <img src="img/Apple.png" alt="Apple">
                 <h3>Apple MacBook Pro</h3>
                 <p>Мощный ноутбук для работы и творчества.</p>
                 <p class="price">Цена: 12999c</p>
-                <button>Добавить в корзину</button>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Apple MacBook Pro', 12999, this)">Добавить в корзину</button>
+                </div>
             </div>
             <div class="product-card">
                 <img src="img/Sony.png" alt="Sony">
                 <h3>Sony WH-1000XM4</h3>
                 <p>Наушники с лучшим шумоподавлением.</p>
                 <p class="price">Цена: 3499c</p>
-                <button>Добавить в корзину</button>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Sony WH-1000XM4', 3499, this)">Добавить в корзину</button>
+                </div>
             </div>
             <div class="product-card">
                 <img src="img/hp.png" alt="HP">
                 <h3>HP Spectre x360</h3>
                 <p>Ультрабук-трансформер для профессионалов.</p>
                 <p class="price">Цена: 10999c</p>
-                <button>Добавить в корзину</button>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('HP Spectre x360', 10999, this)">Добавить в корзину</button>
+                </div>
             </div>
             <div class="product-card">
                 <img src="img/xiaomi.png" alt="Xiaomi">
                 <h3>Xiaomi Mi 13 Pro</h3>
                 <p>Флагманский смартфон с отличной производительностью.</p>
                 <p class="price">Цена: 8999c</p>
-                <button>Добавить в корзину</button>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Xiaomi Mi 13 Pro', 8999, this)">Добавить в корзину</button>
+                </div>
             </div>
             <div class="product-card">
                 <img src="img/lenovo.png" alt="Lenovo">
                 <h3>Lenovo Legion 5</h3>
                 <p>Игровой ноутбук с высокой мощностью.</p>
                 <p class="price">Цена: 11999c</p>
-                <button>Добавить в корзину</button>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Lenovo Legion 5', 11999, this)">Добавить в корзину</button>
+                </div>
             </div>
             <div class="product-card">
                 <img src="img/dyson.png" alt="Dyson">
                 <h3>Dyson V15 Detect</h3>
                 <p>Пылесос с лазерным обнаружением пыли.</p>
                 <p class="price">Цена: 5999c</p>
-                <button>Добавить в корзину</button>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Dyson V15 Detect', 5999, this)">Добавить в корзину</button>
+                </div>
             </div>
             <div class="product-card">
                 <img src="img/sony_tv.png" alt="Sony TV">
                 <h3>Sony Bravia XR OLED</h3>
                 <p>Умный телевизор с потрясающим изображением.</p>
                 <p class="price">Цена: 19999c</p>
-                <button>Добавить в корзину</button>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Sony Bravia XR OLED', 19999, this)">Добавить в корзину</button>
+                </div>
             </div>
             <div class="product-card">
                 <img src="img/jbl.png" alt="JBL">
                 <h3>JBL Charge 5</h3>
                 <p>Портативная колонка с мощным звуком.</p>
                 <p class="price">Цена: 1499c</p>
-                <button>Добавить в корзину</button>
-            </div>
-            
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('JBL Charge 5', 1499, this)">Добавить в корзину</button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Футер -->
     <footer>
-        <p>&copy; 2024 Торговый Центр</p>
+        <p>© 2024 Торговый Центр</p>
     </footer>
-</body>
-</html>
+    <script src="cart.js"></script>
