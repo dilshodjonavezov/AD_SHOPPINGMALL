@@ -1,32 +1,237 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Торговый Центр</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #1a1a1a, #2d2d2d);
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: flex-end;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: #00c4cc;
+            transform: translateY(-2px);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #00c4cc;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .banner {
+            background: url('banner.jpg') no-repeat center center/cover;
+            height: 500px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-out;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('banner.jpg');
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #00c4cc, #1a73e8);
+
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .banner h1 {
+            font-size: 4.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            color: #fff;
+            animation: bounceIn 1s ease-out;
+            text-transform: uppercase;
+        }
+
+        .banner h2 {
+            font-size: 2.2em;
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            color: #e0f7fa;
+            animation: fadeInUp 1s ease-out 0.5s backwards;
+        }
+
+        .banner p {
+            font-size: 1.2em;
+            font-family: 'Roboto', sans-serif;
+            max-width: 600px;
+            color: #d1e8eb;
+            animation: fadeIn 1s ease-out 1s backwards;
+        }
+
+        .categories {
+            padding: 60px 40px;
+            text-align: center;
+            background: #fff;
+            border-radius: 15px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #ffffff, #e0e7ff);
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background: #00c4cc;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-item {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 1.3em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            border: 2px solid #e0e7ff;
+        }
+
+        .category-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+            background: #fff;
+        }
+
+        .featured-products {
+            padding: 60px 40px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #f8f9fa, #e6f0fa);
+        }
+
+        .product-container {
+            margin-top: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
         .product-card {
             background: #fff;
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 15px;
+            width: 250px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
             overflow: hidden;
             border: 2px solid #d9e2ec;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 100%;
-            max-width: 220px;
-            margin: 0 auto;
         }
 
         .product-card img {
             width: 100%;
-            height: 120px;
+            height: 150px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             transition: transform 0.3s ease;
         }
 
@@ -35,47 +240,43 @@
         }
 
         .product-card h3 {
-            font-size: 1.1em;
+            font-size: 1.2em;
             color: #1a1a1a;
             margin-bottom: 5px;
             font-weight: 600;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         .product-card .price {
-            font-size: 1em;
+            font-size: 1.1em;
             color: #00c4cc;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .cart-controls {
             display: flex;
             flex-direction: column;
-            gap: 6px;
-            margin-top: 8px;
+            gap: 8px;
+            margin-top: 10px;
         }
 
         .cart-controls input {
-            padding: 4px;
-            width: 50px;
+            padding: 5px;
+            width: 60px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 5px;
             text-align: center;
             margin: 0 auto;
         }
 
         .cart-controls button {
-            padding: 6px 10px;
+            padding: 6px 12px;
             background: linear-gradient(135deg, #00c4cc, #1a73e8);
             color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s ease, transform 0.2s ease;
-            font-size: 0.9em;
         }
 
         .cart-controls button:hover {
@@ -83,23 +284,80 @@
             transform: translateY(-2px);
         }
 
-        .product-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
+        /* Snackbar Styles */
+        .snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1001;
+            left: 50%;
+            bottom: 30px;
+            font-size: 1em;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .snackbar.show {
+            visibility: visible;
+            animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
         }
 
         @media (max-width: 768px) {
-            .product-row {
+
+            .category-grid,
+            .product-grid {
                 grid-template-columns: 1fr;
             }
+
             .product-card {
-                max-width: 100%;
+                width: 100%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .banner {
+                height: 300px;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -115,8 +373,8 @@
 
     <section class="banner">
         <h1>AD SHOPPING-MALL</h1>
-        <h2>Добро пожаловать в мир роскоши и покупок!</h2>
-        <p>Откройте для себя эксклюзивные предложения и развлечения</p>
+        <h2>Добро пожаловать в наш торговый центр!</h2>
+        <p>Откройте для себя широкий выбор товаров.</p>
     </section>
 
     <section class="categories" id="stores">
@@ -132,119 +390,149 @@
     <section class="featured-products">
         <h2 class="section-title">Топ предложения</h2>
         <div class="product-container">
-            <div class="product-row">
+            <div class="product-grid">
                 <div class="product-card electronics">
-                    <img src="img/samsung.png" alt="Samsung Galaxy S24 Ultra">
-                    <h3>Samsung Galaxy S24 Ultra</h3>
-                    <p class="price">14,999c</p>
+                    <img src="images/phone_case.jpg" alt="Чехол для смартфона">
+                    <h3>Чехол для смартфона</h3>
+                    <p class="price">24 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Samsung Galaxy S24 Ultra', 14999, this)">Добавить в корзину</button>
-                    </div>
-                </div>
-                <div class="product-card electronics">
-                    <img src="img/Apple.png" alt="Apple MacBook Pro">
-                    <h3>Apple MacBook Pro</h3>
-                    <p class="price">12,999c</p>
-                    <div class="cart-controls">
-                        <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Apple MacBook Pro', 12999, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Чехол для смартфона', 24, this)">Добавить в корзину</button>
                     </div>
                 </div>
                 <div class="product-card electronics">
-                    <img src="img/Sony.png" alt="Sony WH-1000XM4">
-                    <h3>Sony WH-1000XM4</h3>
-                    <p class="price">3,499 TJS</p>
+                    <img src="images/screen_protector.jpg" alt="Защитное стекло">
+                    <h3>Защитное стекло</h3>
+                    <p class="price">19 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Sony WH-1000XM4', 3499, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Защитное стекло', 19, this)">Добавить в корзину</button>
                     </div>
                 </div>
-            </div>
-            <div class="product-row">
-                <div class="product-card clothes">
-                    <img src="img/clothes1.jpg" alt="Футболка Nike">
-                    <h3>Футболка Nike</h3>
-                    <p class="price">199c</p>
+                <div class="product-card electronics">
+                    <img src="images/incandescent_bulb.jpg" alt="Лампа накаливания 60W">
+                    <h3>Лампа накаливания 60W</h3>
+                    <p class="price">6 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Футболка Nike', 199, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Лампа накаливания 60W', 6, this)">Добавить в корзину</button>
                     </div>
                 </div>
-                <div class="product-card clothes">
-                    <img src="img/clothes2.jpg" alt="Джинсы Levi's">
-                    <h3>Джинсы Levi's</h3>
-                    <p class="price">499c</p>
+                <div class="product-card electronics">
+                    <img src="images/hair_dryer.jpg" alt="Фен для волос">
+                    <h3>Фен для волос</h3>
+                    <p class="price">72 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Джинсы Levi\'s', 499, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Фен для волос', 72, this)">Добавить в корзину</button>
                     </div>
                 </div>
                 <div class="product-card clothes">
-                    <img src="img/clothes3.jpg" alt="Куртка Zara">
-                    <h3>Куртка Zara</h3>
-                    <p class="price">799c</p>
+                    <img src="images/woven_belt.jpg" alt="Пояс тканый">
+                    <h3>Пояс тканый</h3>
+                    <p class="price">30 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Куртка Zara', 799, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Пояс тканый', 30, this)">Добавить в корзину</button>
                     </div>
                 </div>
-            </div>
-            <div class="product-row">
+                <div class="product-card clothes">
+                    <img src="images/national_pants.jpg" alt="Штаны национальные">
+                    <h3>Штаны национальные</h3>
+                    <p class="price">75 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Штаны национальные', 75, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card clothes">
+                    <img src="images/embroidered_scarf.jpg" alt="Шарф с вышивкой">
+                    <h3>Шарф с вышивкой</h3>
+                    <p class="price">42 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Шарф с вышивкой', 42, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card clothes">
+                    <img src="images/chust_n.jpg" alt="Чуст национальная">
+                    <h3>Чуст национальная</h3>
+                    <p class="price">56 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Чуст национальная', 56, this)">Добавить в корзину</button>
+                    </div>
+                </div>
                 <div class="product-card food">
-                    <img src="img/food1.jpg" alt="Пицца Маргарита">
-                    <h3>Пицца Маргарита</h3>
-                    <p class="price">129c</p>
+                    <img src="images/potato_pirozhki.jpg" alt="Пирожки с картошкой">
+                    <h3>Пирожки с картошкой</h3>
+                    <p class="price">4 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Пицца Маргарита', 129, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Пирожки с картошкой', 4, this)">Добавить в корзину</button>
                     </div>
                 </div>
                 <div class="product-card food">
-                    <img src="img/food2.jpg" alt="Суши Филадельфия">
-                    <h3>Суши Филадельфия</h3>
-                    <p class="price">89c</p>
+                    <img src="images/rye_bread.jpg" alt="Хлеб ржаной">
+                    <h3>Хлеб ржаной</h3>
+                    <p class="price">4 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Суши Филадельфия', 89, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Хлеб ржаной', 4, this)">Добавить в корзину</button>
                     </div>
                 </div>
                 <div class="product-card food">
-                    <img src="img/food3.jpg" alt="Бургер Классик">
-                    <h3>Бургер Классик</h3>
-                    <p class="price">69c</p>
+                    <img src="images/peaches.jpg" alt="Персики">
+                    <h3>Персики</h3>
+                    <p class="price">8 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Бургер Классик', 69, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Персики', 8, this)">Добавить в корзину</button>
                     </div>
                 </div>
-            </div>
-            <div class="product-row">
-                <div class="product-card shoes">
-                    <img src="img/shoes1.jpg" alt="Кроссовки Nike">
-                    <h3>Кроссовки Nike</h3>
-                    <p class="price">599c</p>
+                <div class="product-card food">
+                    <img src="images/cream_cheese.jpg" alt="Творожный сыр">
+                    <h3>Творожный сыр</h3>
+                    <p class="price">19 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Кроссовки Nike', 599, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Творожный сыр', 19, this)">Добавить в корзину</button>
                     </div>
                 </div>
-                <div class="product-card shoes">
-                    <img src="img/shoes2.jpg" alt="Кроссовки Adidas">
-                    <h3>Кроссовки Adidas</h3>
-                    <p class="price">649c</p>
+                <div class="product-card household">
+                    <img src="images/dish_soap.jpg" alt="Моющее средство для посуды">
+                    <h3>Моющее средство для посуды</h3>
+                    <p class="price">13 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Кроссовки Adidas', 649, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Моющее средство для посуды', 13, this)">Добавить в корзину</button>
                     </div>
                 </div>
-                <div class="product-card shoes">
-                    <img src="img/shoes3.jpg" alt="Ботинки Timberland">
-                    <h3>Ботинки Timberland</h3>
-                    <p class="price">799c</p>
+                <div class="product-card household">
+                    <img src="images/laundry_detergent.jpg" alt="Стиральный порошок">
+                    <h3>Стиральный порошок</h3>
+                    <p class="price">18 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Ботинки Timberland', 799, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Стиральный порошок', 18, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card household">
+                    <img src="images/plates_set.jpg" alt="Набор тарелок 6 шт.">
+                    <h3>Набор тарелок 6 шт.</h3>
+                    <p class="price">63 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Набор тарелок 6 шт.', 63, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card household">
+                    <img src="images/single_bedding.jpg" alt="Постельное бельё 1,5 сп">
+                    <h3>Постельное бельё 1,5 сп</h3>
+                    <p class="price">125 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Постельное бельё 1,5 сп', 125, this)">Добавить в корзину</button>
                     </div>
                 </div>
             </div>
@@ -255,10 +543,29 @@
         <div class="footer-info">
             <p>Адрес: г.Худжанд, ул. И.Сомони, 123</p>
             <p>Email: info@shoppingcenter.ru</p>
-            <p>Социальные сети: <a href="https://t.me/dilshodjon_avezov">Telegram</a> | <a href="https://www.instagram.com/dilshodjon_avezov?igsh=MTV3YTVoY3JjNjF1aw==">Instagram</a></p>
+            <p>Социальные сети: <a href="https://t.me/dilshodjon_avezov">Telegram</a> | <a
+                    href="https://www.instagram.com/dilshodjon_avezov?igsh=MTV3YTVoY3JjNjF1aw==">Instagram</a></p>
         </div>
         <p>© 2025 Торговый Центр</p>
     </footer>
+
+    <div id="snackbar" class="snackbar">Товар успешно добавлен в корзину!</div>
+
     <script src="cart.js"></script>
+    <script>
+        function addToCart(productName, price, button) {
+            const quantity = button.parentElement.querySelector('.quantity').value;
+            const total = price * quantity;
+
+            // Simulate adding to cart (replace with actual cart logic)
+            console.log(`Added ${quantity}x ${productName} at ${total} TJS to cart`);
+
+            // Show snackbar
+            const snackbar = document.getElementById("snackbar");
+            snackbar.className = "snackbar show";
+            setTimeout(() => { snackbar.className = "snackbar"; }, 3000);
+        }
+    </script>
 </body>
+
 </html>

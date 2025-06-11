@@ -5,9 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Одежда | Торговый Центр</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            border: 2px solid #d9e2ec;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 1.1em;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-card .price {
+            font-size: 1em;
+            color: #00c4cc;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .cart-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .cart-controls input {
+            padding: 4px;
+            width: 50px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .cart-controls button {
+            padding: 6px 10px;
+            background: linear-gradient(135deg, #00c4cc, #1a73e8);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-size: 0.9em;
+        }
+
+        .cart-controls button:hover {
+            background: linear-gradient(135deg, #1a73e8, #00c4cc);
+            transform: translateY(-2px);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-card {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Шапка -->
     <header>
         <div class="logo">
             <h1>Торговый Центр</h1>
@@ -23,105 +116,180 @@
         </nav>
     </header>
 
-    <!-- Товары: Одежда -->
     <section class="products">
         <h2>Одежда</h2>
-       <div class="product-grid">
-    <div class="product-card clothes">
-        <img src="img/clothes1.jpg" alt="Футболка">
-        <h3>Футболка Nike</h3>
-        <p class="price">Цена: 199c</p>
-        <div class="cart-controls">
-            <input type="number" class="quantity" min="1" value="1">
-            <button onclick="addToCart('Футболка Nike', 199, this)">Добавить в корзину</button>
-        </div>
-    </div>
-    <!-- Другие карточки -->
-            <div class="product-card">
-                <img src="img/clothes2.jpg" alt="Джинсы">
-                <h3>Джинсы Levi's</h3>
-                <p>Классические джинсы для любого стиля.</p>
-                <p class="price">Цена: 499c</p>
+        <div class="product-grid">
+            <div class="product-card clothes">
+                <img src="images/mens_jacket.jpg" alt="Зимняя куртка мужская">
+                <h3>Зимняя куртка мужская</h3>
+                <p>Тёплая куртка</p>
+                <p class="price">188 TJS</p>
                 <div class="cart-controls">
                     <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Джинсы Levi\'s', 499, this)">Добавить в корзину</button>
+                    <button onclick="addToCart('Зимняя куртка мужская', 188, this)">Добавить в корзину</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="img/clothes3.jpg" alt="Куртка">
-                <h3>Куртка Zara</h3>
-                <p>Легкая и теплая куртка.</p>
-                <p class="price">Цена: 799c</p>
+            <div class="product-card clothes">
+                <img src="images/womens_coat.jpg" alt="Пальто женское">
+                <h3>Пальто женское</h3>
+                <p>Элегантное пальто</p>
+                <p class="price">216 TJS</p>
                 <div class="cart-controls">
                     <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Куртка Zara', 799, this)">Добавить в корзину</button>
+                    <button onclick="addToCart('Пальто женское', 216, this)">Добавить в корзину</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="img/clothes4.jpg" alt="Пальто">
-                <h3>Пальто H&M</h3>
-                <p>Элегантное пальто для осени.</p>
-                <p class="price">Цена: 999c</p>
+            <div class="product-card clothes">
+                <img src="images/kids_jacket.jpg" alt="Куртка детская">
+                <h3>Куртка детская</h3>
+                <p>Детская куртка</p>
+                <p class="price">125 TJS</p>
                 <div class="cart-controls">
                     <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Пальто H&M', 999, this)">Добавить в корзину</button>
+                    <button onclick="addToCart('Куртка детская', 125, this)">Добавить в корзину</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="img/clothes5.jpg" alt="Рубашка">
-                <h3>Рубашка Lacoste</h3>
-                <p>Идеально подходит для работы.</p>
-                <p class="price">Цена: 399c</p>
+            <div class="product-card clothes">
+                <img src="images/down_jacket.jpg" alt="Пуховик унисекс">
+                <h3>Пуховик унисекс</h3>
+                <p>Тёплый пуховик</p>
+                <p class="price">250 TJS</p>
                 <div class="cart-controls">
                     <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Рубашка Lacoste', 399, this)">Добавить в корзину</button>
+                    <button onclick="addToCart('Пуховик унисекс', 250, this)">Добавить в корзину</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="img/clothes6.jpg" alt="Платье">
-                <h3>Платье Uniqlo</h3>
-                <p>Легкое летнее платье.</p>
-                <p class="price">Цена: 599c</p>
+            <div class="product-card clothes">
+                <img src="images/windbreaker.jpg" alt="Ветровка">
+                <h3>Ветровка</h3>
+                <p>Лёгкая ветровка</p>
+                <p class="price">96 TJS</p>
                 <div class="cart-controls">
                     <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Платье Uniqlo', 599, this)">Добавить в корзину</button>
+                    <button onclick="addToCart('Ветровка', 96, this)">Добавить в корзину</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="img/clothes7.jpg" alt="Шорты">
-                <h3>Шорты Adidas</h3>
-                <p>Для тренировок и отдыха.</p>
-                <p class="price">Цена: 249c</p>
+            <div class="product-card clothes">
+                <img src="images/leather_jacket.jpg" alt="Куртка кожаная">
+                <h3>Куртка кожаная</h3>
+                <p>Стильная кожанка</p>
+                <p class="price">313 TJS</p>
                 <div class="cart-controls">
                     <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Шорты Adidas', 249, this)">Добавить в корзину</button>
+                    <button onclick="addToCart('Куртка кожаная', 313, this)">Добавить в корзину</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="img/clothes8.jpg" alt="Свитер">
-                <h3>Свитер Mango</h3>
-                <p>Теплый и уютный свитер.</p>
-                <p class="price">Цена: 349c</p>
+            <div class="product-card clothes">
+                <img src="images/womens_trench.jpg" alt="Плащ женский">
+                <h3>Плащ женский</h3>
+                <p>Классический плащ</p>
+                <p class="price">144 TJS</p>
                 <div class="cart-controls">
                     <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Свитер Mango', 349, this)">Добавить в корзину</button>
+                    <button onclick="addToCart('Плащ женский', 144, this)">Добавить в корзину</button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="img/clothes9.jpg" alt="Шапка">
-                <h3>Шапка Puma</h3>
-                <p>Теплая зимняя шапка.</p>
-                <p class="price">Цена: 149c</p>
+            <div class="product-card clothes">
+                <img src="images/parka.jpg" alt="Парка">
+                <h3>Парка</h3>
+                <p>Тёплая парка</p>
+                <p class="price">213 TJS</p>
                 <div class="cart-controls">
                     <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Шапка Puma', 149, this)">Добавить в корзину</button>
+                    <button onclick="addToCart('Парка', 213, this)">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card clothes">
+                <img src="images/sports_jacket.jpg" alt="Куртка спортивная">
+                <h3>Куртка спортивная</h3>
+                <p>Спортивная куртка</p>
+                <p class="price">108 TJS</p>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Куртка спортивная', 108, this)">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card clothes">
+                <img src="images/poncho.jpg" alt="Пончо">
+                <h3>Пончо</h3>
+                <p>Тёплое пончо</p>
+                <p class="price">138 TJS</p>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Пончо', 138, this)">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card clothes">
+                <img src="images/women_chakan.jpg" alt="Чакан женский">
+                <h3>Чакан женский</h3>
+                <p>Традиционное платье</p>
+                <p class="price">96 TJS</p>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Чакан женский', 96, this)">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card clothes">
+                <img src="images/kurpacha.jpg" alt="Курпача мужская">
+                <h3>Курпача мужская</h3>
+                <p>Мужской национальный костюм</p>
+                <p class="price">88 TJS</p>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Курпача мужская', 88, this)">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card clothes">
+                <img src="images/tyubeteyka.jpg" alt="Тюбетейка">
+                <h3>Тюбетейка</h3>
+                <p>Традиционная шапка</p>
+                <p class="price">24 TJS</p>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Тюбетейка', 24, this)">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card clothes">
+                <img src="images/silk_scarf.jpg" alt="Платок шёлковый">
+                <h3>Платок шёлковый</h3>
+                <p>Шёлковый платок</p>
+                <p class="price">38 TJS</p>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Платок шёлковый', 38, this)">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card clothes">
+                <img src="images/kids_chakan.jpg" alt="Чакан детский">
+                <h3>Чакан детский</h3>
+                <p>Детское платье</p>
+                <p class="price">60 TJS</p>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Чакан детский', 60, this)">Добавить в корзину</button>
+                </div>
+            </div>
+            <div class="product-card clothes">
+                <img src="images/national_vest.jpg" alt="Жилет национальный">
+                <h3>Жилет национальный</h3>
+                <p>Жилет с вышивкой</p>
+                <p class="price">50 TJS</p>
+                <div class="cart-controls">
+                    <input type="number" class="quantity" min="1" value="1">
+                    <button onclick="addToCart('Жилет национальный', 50, this)">Добавить в корзину</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Футер -->
     <footer>
-        <p>© 2024 Торговый Центр</p>
+        <div class="footer-info">
+            <p>Адрес: г.Худжанд, ул. И.Сомони, 123</p>
+            <p>Email: info@shoppingcenter.ru</p>
+            <p>Социальные сети: <a href="https://t.me/dilshodjon_avezov">Telegram</a> | <a href="https://www.instagram.com/dilshodjon_avezov?igsh=MTV3YTVoY3JjNjF1aw==">Instagram</a></p>
+        </div>
+        <p>© 2025 Торговый Центр</p>
     </footer>
     <script src="cart.js"></script>
+</body>
+</html>

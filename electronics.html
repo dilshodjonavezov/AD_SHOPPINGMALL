@@ -5,6 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Электроника | Торговый Центр</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            border: 2px solid #d9e2ec;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 1.1em;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-card .price {
+            font-size: 1em;
+            color: #00c4cc;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .cart-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .cart-controls input {
+            padding: 4px;
+            width: 50px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .cart-controls button {
+            padding: 6px 10px;
+            background: linear-gradient(135deg, #00c4cc, #1a73e8);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-size: 0.9em;
+        }
+
+        .cart-controls button:hover {
+            background: linear-gradient(135deg, #1a73e8, #00c4cc);
+            transform: translateY(-2px);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-card {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,33 +118,163 @@
         <div class="product-container">
             <div class="product-grid">
                 <div class="product-card electronics">
-                    <img src="img/samsung.png" alt="Samsung Galaxy S24 Ultra">
-                    <h3>Samsung Galaxy S24 Ultra</h3>
-                    <p>Смартфон с великолепной камерой.</p>
-                    <p class="price">Цена: 14999c</p>
+                    <img src="images/xiaomi_phone.jpg" alt="Смартфон Xiaomi">
+                    <h3>Смартфон Xiaomi</h3>
+                    <p>Смартфон</p>
+                    <p class="price">1200 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Samsung Galaxy S24 Ultra', 14999, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Смартфон Xiaomi', 1200, this)">Добавить в корзину</button>
                     </div>
                 </div>
                 <div class="product-card electronics">
-                    <img src="img/Apple.png" alt="Apple MacBook Pro">
-                    <h3>Apple MacBook Pro</h3>
-                    <p>Мощный ноутбук для работы.</p>
-                    <p class="price">Цена: 12999c</p>
+                    <img src="images/usb_c_charger.jpg" alt="Зарядное устройство USB-C">
+                    <h3>Зарядное устройство USB-C</h3>
+                    <p>Быстрая зарядка</p>
+                    <p class="price">38 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Apple MacBook Pro', 12999, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Зарядное устройство USB-C', 38, this)">Добавить в корзину</button>
                     </div>
                 </div>
                 <div class="product-card electronics">
-                    <img src="img/Sony.png" alt="Sony WH-1000XM4">
-                    <h3>Sony WH-1000XM4</h3>
-                    <p>Наушники с шумоподавлением.</p>
-                    <p class="price">Цена: 3499c</p>
+                    <img src="images/wireless_earbuds.jpg" alt="Наушники беспроводные">
+                    <h3>Наушники беспроводные</h3>
+                    <p>Bluetooth наушники</p>
+                    <p class="price">120 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Sony WH-1000XM4', 3499, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Наушники беспроводные', 120, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/samsung_phone.jpg" alt="Смартфон Samsung">
+                    <h3>Смартфон Samsung</h3>
+                    <p>Флагманский смартфон</p>
+                    <p class="price">1875 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Смартфон Samsung', 1875, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/power_bank.jpg" alt="Power Bank 10000 mAh">
+                    <h3>Power Bank 10000 mAh</h3>
+                    <p>Портативное зарядное устройство</p>
+                    <p class="price">96 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Power Bank 10000 mAh', 96, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/usb_c_cable.jpg" alt="Кабель USB-C">
+                    <h3>Кабель USB-C</h3>
+                    <p>Кабель для зарядки</p>
+                    <p class="price">19 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Кабель USB-C', 19, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/led_bulb_10w.jpg" alt="LED лампа 10W">
+                    <h3>LED лампа 10W</h3>
+                    <p>Энергоэффективная лампа</p>
+                    <p class="price">13 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('LED лампа 10W', 13, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/desk_lamp.jpg" alt="Настольная лампа">
+                    <h3>Настольная лампа</h3>
+                    <p>Лампа для чтения</p>
+                    <p class="price">60 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Настольная лампа', 60, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/ceiling_light.jpg" alt="Светильник потолочный">
+                    <h3>Светильник потолочный</h3>
+                    <p>Светодиодный светильник</p>
+                    <p class="price">100 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Светильник потолочный', 100, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/led_strip.jpg" alt="Лента LED 5м">
+                    <h3>Лента LED 5м</h3>
+                    <p>Декоративная подсветка</p>
+                    <p class="price">48 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Лента LED 5м', 48, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/led_flashlight.jpg" alt="Фонарик LED">
+                    <h3>Фонарик LED</h3>
+                    <p>Портативный фонарик</p>
+                    <p class="price">31 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Фонарик LED', 31, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/electric_kettle.jpg" alt="Электрочайник 1.7L">
+                    <h3>Электрочайник 1.7L</h3>
+                    <p>Быстрый нагрев</p>
+                    <p class="price">125 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Электрочайник 1.7L', 125, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/hand_mixer.jpg" alt="Миксер ручной">
+                    <h3>Миксер ручной</h3>
+                    <p>Для кухни</p>
+                    <p class="price">60 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Миксер ручной', 60, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/toaster.jpg" alt="Тостер">
+                    <h3>Тостер</h3>
+                    <p>Для тостов</p>
+                    <p class="price">100 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Тостер', 100, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/immersion_blender.jpg" alt="Блендер погружной">
+                    <h3>Блендер погружной</h3>
+                    <p>Для смузи</p>
+                    <p class="price">84 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Блендер погружной', 84, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="images/steam_iron.jpg" alt="Утюг паровой">
+                    <h3>Утюг паровой</h3>
+                    <p>Паровой утюг</p>
+                    <p class="price">113 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Утюг паровой', 113, this)">Добавить в корзину</button>
                     </div>
                 </div>
             </div>

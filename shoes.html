@@ -5,6 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обувь | Торговый Центр</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            border: 2px solid #d9e2ec;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 1.1em;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-card .price {
+            font-size: 1em;
+            color: #00c4cc;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .cart-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .cart-controls input {
+            padding: 4px;
+            width: 50px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .cart-controls button {
+            padding: 6px 10px;
+            background: linear-gradient(135deg, #00c4cc, #1a73e8);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-size: 0.9em;
+        }
+
+        .cart-controls button:hover {
+            background: linear-gradient(135deg, #1a73e8, #00c4cc);
+            transform: translateY(-2px);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-card {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,33 +118,103 @@
         <div class="product-container">
             <div class="product-grid">
                 <div class="product-card shoes">
-                    <img src="img/shoes1.jpg" alt="Кроссовки Nike">
-                    <h3>Кроссовки Nike</h3>
-                    <p>Для бега и прогулок.</p>
-                    <p class="price">Цена: 599c</p>
+                    <img src="images/kids_sneakers.jpg" alt="Детские кроссовки">
+                    <h3>Детские кроссовки</h3>
+                    <p>Удобные кроссовки</p>
+                    <p class="price">60 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Кроссовки Nike', 599, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Детские кроссовки', 60, this)">Добавить в корзину</button>
                     </div>
                 </div>
                 <div class="product-card shoes">
-                    <img src="img/shoes2.jpg" alt="Кроссовки Adidas">
-                    <h3>Кроссовки Adidas</h3>
-                    <p>Спортивная обувь.</p>
-                    <p class="price">Цена: 649c</p>
+                    <img src="images/kids_sandals.jpg" alt="Сандалии детские">
+                    <h3>Сандалии детские</h3>
+                    <p>Лёгкие сандалии</p>
+                    <p class="price">38 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Кроссовки Adidas', 649, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Сандалии детские', 38, this)">Добавить в корзину</button>
                     </div>
                 </div>
                 <div class="product-card shoes">
-                    <img src="img/shoes3.jpg" alt="Ботинки Timberland">
-                    <h3>Ботинки Timberland</h3>
-                    <p>Надежные ботинки.</p>
-                    <p class="price">Цена: 799c</p>
+                    <img src="images/kids_winter_boots.jpg" alt="Ботинки зимние">
+                    <h3>Ботинки зимние</h3>
+                    <p>Тёплые ботинки</p>
+                    <p class="price">84 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Ботинки Timberland', 799, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Ботинки зимние', 84, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card shoes">
+                    <img src="images/kids_dress_shoes.jpg" alt="Туфли детские">
+                    <h3>Туфли детские</h3>
+                    <p>Классические туфли</p>
+                    <p class="price">50 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Туфли детские', 50, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card shoes">
+                    <img src="images/kids_canvas_shoes.jpg" alt="Кеды для детей">
+                    <h3>Кеды для детей</h3>
+                    <p>Стильные кеды</p>
+                    <p class="price">54 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Кеды для детей', 54, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card shoes">
+                    <img src="images/kids_slippers.jpg" alt="Тапочки домашние">
+                    <h3>Тапочки домашние</h3>
+                    <p>Мягкие тапочки</p>
+                    <p class="price">24 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Тапочки домашние', 24, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card shoes">
+                    <img src="images/kids_rain_boots.jpg" alt="Сапоги резиновые">
+                    <h3>Сапоги резиновые</h3>
+                    <p>Резиновые сапоги</p>
+                    <p class="price">44 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Сапоги резиновые', 44, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card shoes">
+                    <img src="images/kids_moccasins.jpg" alt="Мокасины детские">
+                    <h3>Мокасины детские</h3>
+                    <p>Мокасины для детей</p>
+                    <p class="price">60 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Мокасины детские', 60, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card shoes">
+                    <img src="images/kids_ballet_flats.jpg" alt="Балетки">
+                    <h3>Балетки</h3>
+                    <p>Детские балетки</p>
+                    <p class="price">48 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Балетки', 48, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card shoes">
+                    <img src="images/kids_winter_shoes.jpg" alt="Сапоги зимние">
+                    <h3>Сапоги зимние</h3>
+                    <p>Тёплые сапоги</p>
+                    <p class="price">100 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Сапоги зимние', 100, this)">Добавить в корзину</button>
                     </div>
                 </div>
             </div>

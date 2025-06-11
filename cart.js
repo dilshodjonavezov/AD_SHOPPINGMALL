@@ -1,43 +1,126 @@
-// cart.js
+// Updated productImages object with correct 'images/' folder path
 const productImages = {
-    'Samsung Galaxy S24 Ultra': 'img/samsung.png',
-    'Apple MacBook Pro': 'img/Apple.png',
-    'Sony WH-1000XM4': 'img/Sony.png',
-    'HP Spectre x360': 'img/hp.png',
-    'Xiaomi Mi 13 Pro': 'img/xiaomi.png',
-    'Lenovo Legion 5': 'img/lenovo.png',
-    'Dyson V15 Detect': 'img/dyson.png',
-    'Sony Bravia XR OLED': 'img/sony_tv.png',
-    'JBL Charge 5': 'img/jbl.png',
-    'Футболка Nike': 'img/clothes1.jpg',
-    'Джинсы Levi\'s': 'img/clothes2.jpg',
-    'Куртка Zara': 'img/clothes3.jpg',
-    'Пальто H&M': 'img/clothes4.jpg',
-    'Рубашка Lacoste': 'img/clothes5.jpg',
-    'Платье Uniqlo': 'img/clothes6.jpg',
-    'Шорты Adidas': 'img/clothes7.jpg',
-    'Свитер Mango': 'img/clothes8.jpg',
-    'Шапка Puma': 'img/clothes9.jpg',
-    'Пицца Маргарита': 'img/food1.jpg',
-    'Суши Филадельфия': 'img/food2.jpg',
-    'Бургер Классик': 'img/food3.jpg',
-    'Паста Карбонара': 'img/food4.jpg',
-    'Стейк Рибай': 'img/food5.jpg',
-    'Салат Цезарь': 'img/food6.jpg',
-    'Том Ям': 'img/food7.jpg',
-    'Шашлык из курицы': 'img/food8.jpg',
-    'Тирамису': 'img/food9.jpg',
-    'Кроссовки Nike': 'img/shoes1.jpg',
-    'Кроссовки Adidas': 'img/shoes2.jpg',
-    'Ботинки Timberland': 'img/shoes3.jpg',
-    'Классические туфли': 'img/shoes4.jpg',
-    'Сандалии Puma': 'img/shoes5.jpg',
-    'Кеды Vans': 'img/shoes6.jpg',
-    'Ботильоны женские': 'img/shoes7.jpg',
-    'Зимние сапоги': 'img/shoes8.jpg',
-    'Шлепанцы Crocs': 'img/shoes9.jpg'
+    'Лепёшка': 'images/non_bread.jpg',
+    'Хлеб пшеничный': 'images/wheat_bread.jpg',
+    'Самбуса': 'images/sambusa.jpg',
+    'Кулча': 'images/kulcha.jpg',
+    'Булочка сладкая': 'images/sweet_bun.jpg',
+    'Чапоти': 'images/chapoti.jpg',
+    'Пирожки с картошкой': 'images/potato_pirozhki.jpg',
+    'Хлеб ржаной': 'images/rye_bread.jpg',
+    'Фатир': 'images/fatir.jpg',
+    'Батон нарезной': 'images/baton.jpg',
+    'Яблоки местные': 'images/apples.jpg',
+    'Гранаты': 'images/pomegranates.jpg',
+    'Виноград кишмиш': 'images/grapes.jpg',
+    'Дыня': 'images/melon.jpg',
+    'Арбуз': 'images/watermelon.jpg',
+    'Персики': 'images/peaches.jpg',
+    'Абрикосы': 'images/apricots.jpg',
+    'Хурма': 'images/persimmon.jpg',
+    'Инжир': 'images/figs.jpg',
+    'Груши': 'images/pears.jpg',
+    'Говядина': 'images/beef.jpg',
+    'Баранина': 'images/lamb.jpg',
+    'Курица целая': 'images/chicken.jpg',
+    'Молоко 3.2%': 'images/milk.jpg',
+    'Сметана 20': 'images/sour_cream.jpg',
+    'Творожный сыр': 'images/cream_cheese.jpg',
+    'Колбаса вареная': 'images/sausage.jpg',
+    'Йогурт натуральный': 'images/yogurt.jpg',
+    'Кефир 2.5%': 'images/kefir.jpg',
+    'Сыр сулугуни': 'images/suluguni.jpg',
+    'Зимняя куртка мужская': 'images/mens_jacket.jpg',
+    'Пальто женское': 'images/womens_coat.jpg',
+    'Куртка детская': 'images/kids_jacket.jpg',
+    'Пуховик унисекс': 'images/down_jacket.jpg',
+    'Ветровка': 'images/windbreaker.jpg',
+    'Куртка кожаная': 'images/leather_jacket.jpg',
+    'Плащ женский': 'images/womens_trench.jpg',
+    'Парка': 'images/parka.jpg',
+    'Куртка спортивная': 'images/sports_jacket.jpg',
+    'Пончо': 'images/poncho.jpg',
+    'Чакан женский': 'images/women_chakan.jpg',
+    'Курпача мужская': 'images/kurpacha.jpg',
+    'Тюбетейка': 'images/tyubeteyka.jpg',
+    'Платок шёлковый': 'images/silk_scarf.jpg',
+    'Чакан детский': 'images/kids_chakan.jpg',
+    'Жилет национальный': 'images/national_vest.jpg',
+    'Пояс тканый': 'images/woven_belt.jpg',
+    'Штаны национальные': 'images/national_pants.jpg',
+    'Шарф с вышивкой': 'images/embroidered_scarf.jpg',
+    'Чуст национальная': 'images/chust_n.jpg',
+    'Детские кроссовки': 'images/kids_sneakers.jpg',
+    'Сандалии детские': 'images/kids_sandals.jpg',
+    'Ботинки зимние': 'images/kids_winter_boots.jpg',
+    'Туфли детские': 'images/kids_dress_shoes.jpg',
+    'Кеды для детей': 'images/kids_canvas_shoes.jpg',
+    'Тапочки домашние': 'images/kids_slippers.jpg',
+    'Сапоги резиновые': 'images/kids_rain_boots.jpg',
+    'Мокасины детские': 'images/kids_moccasins.jpg',
+    'Балетки': 'images/kids_ballet_flats.jpg',
+    'Сапоги зимние': 'images/kids_winter_shoes.jpg',
+    'Моющее средство для посуды': 'images/dish_soap.jpg',
+    'Стиральный порошок': 'images/laundry_detergent.jpg',
+    'Очиститель для стекол': 'images/glass_cleaner.jpg',
+    'Средство для ванной': 'images/bathroom_cleaner.jpg',
+    'Освежитель воздуха': 'images/air_freshener.jpg',
+    'Универсальный очиститель': 'images/universal_cleaner.jpg',
+    'Средство для полов': 'images/floor_cleaner.jpg',
+    'Гель для туалета': 'images/toilet_gel.jpg',
+    'Пятновыводитель': 'images/stain_remover.jpg',
+    'Кондиционер для белья': 'images/fabric_softener.jpg',
+    'Набор тарелок 6 шт.': 'images/plates_set.jpg',
+    'Чайный сервиз': 'images/tea_set.jpg',
+    'Набор стаканов': 'images/glasses_set.jpg',
+    'Кастрюля 3 л': 'images/pot_3l.jpg',
+    'Сковорода 24 см': 'images/frying_pan.jpg',
+    'Набор ложек 6 шт.': 'images/spoons_set.jpg',
+    'Набор вилок 6 шт.': 'images/forks_set.jpg',
+    'Чайник заварочный': 'images/teapot.jpg',
+    'Набор ножей 3': 'images/knife_set.jpg',
+    'Миска для салата': 'images/salad_bowl.jpg',
+    'Постельное бельё 1,5 сп': 'images/single_bedding.jpg',
+    'Полотенце банное': 'images/bath_towel.jpg',
+    'Скатерть': 'images/tablecloth.jpg',
+    'Плед': 'images/blanket.jpg',
+    'Подушка': 'images/pillow.jpg',
+    'Одеяло': 'images/quilt.jpg',
+    'Шторы': 'images/curtains.jpg',
+    'Коврик для ванной': 'images/bath_mat.jpg',
+    'Набор салфеток 4 шт.': 'images/napkins_set.jpg',
+    'Покрывало': 'images/bedspread.jpg',
+    'Смартфон Xiaomi': 'images/xiaomi_phone.jpg',
+    'Зарядное устройство USB-C': 'images/usb_c_charger.jpg',
+    'Наушники беспроводные': 'images/wireless_earbuds.jpg',
+    'Смартфон Samsung': 'images/samsung_phone.jpg',
+    'Power Bank 10000 mAh': 'images/power_bank.jpg',
+    'Кабель USB-C': 'images/usb_c_cable.jpg',
+    'Чехол для смартфона': 'images/phone_case.jpg',
+    'Защитное стекло': 'images/screen_protector.jpg',
+    'Смартфон Huawei': 'images/huawei_phone.jpg',
+    'Держатель для телефона': 'images/phone_holder.jpg',
+    'LED лампа 10W': 'images/led_bulb_10w.jpg',
+    'Настольная лампа': 'images/desk_lamp.jpg',
+    'Светильник потолочный': 'images/ceiling_light.jpg',
+    'Лента LED 5м': 'images/led_strip.jpg',
+    'Фонарик LED': 'images/led_flashlight.jpg',
+    'Лампа накаливания 60W': 'images/incandescent_bulb.jpg',
+    'Ночник': 'images/night_light.jpg',
+    'Уличный фонарь LED': 'images/outdoor_led_light.jpg',
+    'Лампа энергосберегающая': 'images/cfl_bulb.jpg',
+    'Торшер': 'images/floor_lamp.jpg',
+    'Электрочайник 1.7L': 'images/electric_kettle.jpg',
+    'Миксер ручной': 'images/hand_mixer.jpg',
+    'Тостер': 'images/toaster.jpg',
+    'Блендер погружной': 'images/immersion_blender.jpg',
+    'Утюг паровой': 'images/steam_iron.jpg',
+    'Фен для волос': 'images/hair_dryer.jpg',
+    'Кофеварка': 'images/coffee_maker.jpg',
+    'Мясорубка электрическая': 'images/meat_grinder.jpg',
+    'Вентилятор настольный': 'images/desk_fan.jpg',
+    'Соковыжималка': 'images/juicer.jpg'
 };
-
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 window.addToCart = function(name, price, button) {
@@ -56,7 +139,15 @@ window.addToCart = function(name, price, button) {
     }
     
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Товар добавлен в корзину!');
+    // Replace alert with snackbar (assuming index.html has snackbar implementation)
+    const snackbar = document.createElement('div');
+    snackbar.textContent = 'Товар успешно добавлен в корзину!';
+    snackbar.className = 'snackbar show';
+    document.body.appendChild(snackbar);
+    setTimeout(() => {
+        snackbar.className = 'snackbar';
+        document.body.removeChild(snackbar);
+    }, 3000);
     displayCart();
 };
 
@@ -77,13 +168,13 @@ function displayCart() {
     cart.forEach((item, index) => {
         const itemEl = document.createElement('div');
         itemEl.className = 'cart-item';
-        const imagePath = productImages[item.name] || 'img/placeholder.jpg';
+        const imagePath = productImages[item.name] || 'images/placeholder.jpg';
         itemEl.innerHTML = `
             <img src="${imagePath}" alt="${item.name}">
             <h3>${item.name}</h3>
-            <p>Цена: ${item.price}c</p>
+            <p>Цена: ${item.price} TJS</p>
             <p>Количество: ${item.quantity} шт.</p>
-            <p>Итого: ${item.quantity * item.price}c</p>
+            <p>Итого: ${item.quantity * item.price} TJS</p>
             <button onclick="removeFromCart(${index})" class="cart-button">Удалить</button>
         `;
         cartItems.appendChild(itemEl);

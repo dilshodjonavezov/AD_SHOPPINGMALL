@@ -5,6 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Еда | Торговый Центр</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            border: 2px solid #d9e2ec;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 1.1em;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-card .price {
+            font-size: 1em;
+            color: #00c4cc;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .cart-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .cart-controls input {
+            padding: 4px;
+            width: 50px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .cart-controls button {
+            padding: 6px 10px;
+            background: linear-gradient(135deg, #00c4cc, #1a73e8);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-size: 0.9em;
+        }
+
+        .cart-controls button:hover {
+            background: linear-gradient(135deg, #1a73e8, #00c4cc);
+            transform: translateY(-2px);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-card {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,33 +118,163 @@
         <div class="product-container">
             <div class="product-grid">
                 <div class="product-card food">
-                    <img src="img/food1.jpg" alt="Пицца Маргарита">
-                    <h3>Пицца Маргарита</h3>
-                    <p>Свежие ингредиенты и вкус.</p>
-                    <p class="price">Цена: 129c</p>
+                    <img src="images/non_bread.jpg" alt="Лепёшка">
+                    <h3>Лепёшка</h3>
+                    <p>Традиционная таджикская лепёшка</p>
+                    <p class="price">4 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Пицца Маргарита', 129, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Лепёшка', 4, this)">Добавить в корзину</button>
                     </div>
                 </div>
                 <div class="product-card food">
-                    <img src="img/food2.jpg" alt="Суши Филадельфия">
-                    <h3>Суши Филадельфия</h3>
-                    <p>Роллы с лососем.</p>
-                    <p class="price">Цена: 89c</p>
+                    <img src="images/wheat_bread.jpg" alt="Хлеб пшеничный">
+                    <h3>Хлеб пшеничный</h3>
+                    <p></p>
+                    <p class="price">3 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Суши Филадельфия', 89, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Хлеб пшеничный', 3, this)">Добавить в корзину</button>
                     </div>
                 </div>
                 <div class="product-card food">
-                    <img src="img/food3.jpg" alt="Бургер Классик">
-                    <h3>Бургер Классик</h3>
-                    <p>Говяжья котлета и соус.</p>
-                    <p class="price">Цена: 69c</p>
+                    <img src="images/sambusa.jpg" alt="Самбуса">
+                    <h3>Самбуса</h3>
+                    <p>Слоёная выпечка с мясом</p>
+                    <p class="price">5 TJS</p>
                     <div class="cart-controls">
                         <input type="number" class="quantity" min="1" value="1">
-                        <button onclick="addToCart('Бургер Классик', 69, this)">Добавить в корзину</button>
+                        <button onclick="addToCart('Самбуса', 5, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/kulcha.jpg" alt="Кулча">
+                    <h3>Кулча</h3>
+                    <p>Маленькая лепёшка</p>
+                    <p class="price">3 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Кулча', 3, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/sweet_bun.jpg" alt="Булочка сладкая">
+                    <h3>Булочка сладкая</h3>
+                    <p>Сладкая выпечка</p>
+                    <p class="price">2 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Булочка сладкая', 2, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/chapoti.jpg" alt="Чапоти">
+                    <h3>Чапоти</h3>
+                    <p>Тонкая лепёшка</p>
+                    <p class="price">4 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Чапоти', 4, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/apples.jpg" alt="Яблоки местные">
+                    <h3>Яблоки местные</h3>
+                    <p>Свежие яблоки из Худжанда</p>
+                    <p class="price">6 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Яблоки местные', 6, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/pomegranates.jpg" alt="Гранаты">
+                    <h3>Гранаты</h3>
+                    <p>Сочные гранаты</p>
+                    <p class="price">9 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Гранаты', 9, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/grapes.jpg" alt="Виноград кишмиш">
+                    <h3>Виноград кишмиш</h3>
+                    <p>Сладкий виноград</p>
+                    <p class="price">7 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Виноград кишмиш', 7, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/melon.jpg" alt="Дыня">
+                    <h3>Дыня</h3>
+                    <p>Ароматная дыня</p>
+                    <p class="price">13 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Дыня', 13, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/watermelon.jpg" alt="Арбуз">
+                    <h3>Арбуз</h3>
+                    <p>Сочный арбуз</p>
+                    <p class="price">10 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Арбуз', 10, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/beef.jpg" alt="Говядина">
+                    <h3>Говядина</h3>
+                    <p>Свежая говядина</p>
+                    <p class="price">88 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Говядина', 88, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/lamb.jpg" alt="Баранина">
+                    <h3>Баранина</h3>
+                    <p>Качественная баранина</p>
+                    <p class="price">90 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Баранина', 90, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/chicken.jpg" alt="Курица целая">
+                    <h3>Курица целая</h3>
+                    <p>Свежая курица</p>
+                    <p class="price">44 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Курица целая', 44, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/milk.jpg" alt="Молоко 3.2%">
+                    <h3>Молоко 3.2%</h3>
+                    <p>Молоко пастеризованное</p>
+                    <p class="price">7 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Молоко 3.2%', 7, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="images/sour_cream.jpg" alt="Сметана 20%">
+                    <h3>Сметана 20%</h3>
+                    <p>Натуральная сметана</p>
+                    <p class="price">15 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Сметана 20%', 15, this)">Добавить в корзину</button>
                     </div>
                 </div>
             </div>
