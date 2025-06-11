@@ -1,3 +1,4 @@
+// cart.js
 const productImages = {
     'Samsung Galaxy S24 Ultra': 'img/samsung.png',
     'Apple MacBook Pro': 'img/Apple.png',
@@ -39,7 +40,11 @@ const productImages = {
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-function addToCart(name, price, button) {
+window.addToCart = function(name, price, button) {
+    if (!name || !price || !button) {
+        console.error('Invalid parameters for addToCart:', { name, price, button });
+        return;
+    }
     const quantityInput = button.previousElementSibling;
     const quantity = parseInt(quantityInput.value) || 1;
     
@@ -51,13 +56,19 @@ function addToCart(name, price, button) {
     }
     
     localStorage.setItem('cart', JSON.stringify(cart));
-    window.location.href = 'cart.html';
-}
+    alert('Товар добавлен в корзину!');
+    displayCart();
+};
 
 function displayCart() {
     const cartItems = document.getElementById('cart-items');
     const totalQuantityEl = document.getElementById('total-quantity');
     const totalPriceEl = document.getElementById('total-price');
+    
+    if (!cartItems || !totalQuantityEl || !totalPriceEl) {
+        console.error('Cart elements not found');
+        return;
+    }
     
     cartItems.innerHTML = '';
     let totalQuantity = 0;
@@ -93,6 +104,11 @@ function removeFromCart(index) {
 function displayCheckoutForm() {
     const checkoutForm = document.getElementById('checkout-form');
     const userData = JSON.parse(localStorage.getItem('userData'));
+    
+    if (!checkoutForm) {
+        console.error('Checkout form container not found');
+        return;
+    }
     
     if (!userData) {
         checkoutForm.innerHTML = `
@@ -145,23 +161,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn = document.getElementById('checkout-button');
         const span = document.getElementsByClassName('close')[0];
         
-        btn.onclick = () => {
-            if (cart.length === 0) {
-                alert('Корзина пуста!');
-                return;
-            }
-            modal.style.display = 'block';
-            displayCheckoutForm();
-        };
-        
-        span.onclick = () => {
-            modal.style.display = 'none';
-        };
-        
-        window.onclick = (event) => {
-            if (event.target === modal) {
+        if (btn && modal && span) {
+            btn.onclick = () => {
+                if (cart.length === 0) {
+                    alert('Корзина пуста!');
+                    return;
+                }
+                modal.style.display = 'block';
+                displayCheckoutForm();
+            };
+            
+            span.onclick = () => {
                 modal.style.display = 'none';
-            }
-        };
+            };
+            
+            window.onclick = (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        } else {
+            console.error('Modal or button elements not found');
+        }
     }
 });

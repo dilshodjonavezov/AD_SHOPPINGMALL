@@ -7,11 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Шапка -->
     <header>
-        <div class="logo">
-            <h1>Торговый Центр</h1>
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Главная</a></li>
@@ -23,30 +19,29 @@
         </nav>
     </header>
 
-    <!-- Список магазинов -->
     <section class="store-list">
-        <h2>Магазины</h2>
+        <h2 class="section-title">Магазины</h2>
         <div class="store-grid">
             <a href="electronics.html">
-                <div class="store-item">
+                <div class="store-item" data-category="electronics">
                     <h3>Магазин электроники</h3>
                     <p>Телефоны, компьютеры и другая техника.</p>
                 </div>
             </a>
             <a href="clothes.html">
-                <div class="store-item">
+                <div class="store-item" data-category="clothes">
                     <h3>Магазин одежды</h3>
                     <p>Мода и стиль для всех.</p>
                 </div>
             </a>
             <a href="food.html">
-                <div class="store-item">
+                <div class="store-item" data-category="food">
                     <h3>Продуктовый магазин</h3>
                     <p>Продукты на любой вкус.</p>
                 </div>
             </a>
             <a href="shoes.html">
-                <div class="store-item">
+                <div class="store-item" data-category="shoes">
                     <h3>Магазин обуви</h3>
                     <p>Модная и удобная обувь.</p>
                 </div>
@@ -54,8 +49,14 @@
         </div>
     </section>
 
-    <!-- Футер -->
-    <footer class="mgFooter">
-        <p>© 2024 Торговый Центр</p>
+    <footer>
+        <div class="footer-info">
+            <p>Адрес: г.Худжанд, ул. И.Сомони, 123</p>
+            <p>Email: info@shoppingcenter.ru</p>
+            <p>Социальные сети: <a href="https://t.me/dilshodjon_avezov">Telegram</a> | <a href="https://www.instagram.com/dilshodjon_avezov?igsh=MTV3YTVoY3JjNjF1aw==">Instagram</a></p>
+        </div>
+        <p>© 2025 Торговый Центр</p>
     </footer>
     <script src="cart.js"></script>
+</body>
+</html>

@@ -5,15 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Торговый Центр</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            border: 2px solid #d9e2ec;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 1.1em;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-card .price {
+            font-size: 1em;
+            color: #00c4cc;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .cart-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .cart-controls input {
+            padding: 4px;
+            width: 50px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .cart-controls button {
+            padding: 6px 10px;
+            background: linear-gradient(135deg, #00c4cc, #1a73e8);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-size: 0.9em;
+        }
+
+        .cart-controls button:hover {
+            background: linear-gradient(135deg, #1a73e8, #00c4cc);
+            transform: translateY(-2px);
+        }
+
+        .product-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .product-row {
+                grid-template-columns: 1fr;
+            }
+            .product-card {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Шапка -->
     <header>
-        <div class="logo">
-            <div class="Icons">
-                <img src="icon/1.png" width="100" height="100" alt="Логотип">
-            </div>
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Главная</a></li>
@@ -25,42 +113,152 @@
         </nav>
     </header>
 
-    <!-- Главный баннер -->
     <section class="banner">
-        <h1 class="AD">AD SHOPPING-MALL</h1>
-        <h2>Добро пожаловать в наш Торговый Центр!</h2>
-        <p>Откройте мир покупок и развлечений!</p>
+        <h1>AD SHOPPING-MALL</h1>
+        <h2>Добро пожаловать в мир роскоши и покупок!</h2>
+        <p>Откройте для себя эксклюзивные предложения и развлечения</p>
     </section>
 
-    <!-- Категории магазинов -->
     <section class="categories" id="stores">
-        <div class="category-grid1">
-            <h2>Наши категории</h2>
-        </div>
+        <h2 class="section-title">Наши категории</h2>
         <div class="category-grid">
-            <a href="electronics.html"><div class="category-item">Электроника</div></a>
-            <a href="clothes.html"><div class="category-item">Одежда</div></a>
-            <a href="food.html"><div class="category-item">Еда</div></a>
-            <a href="shoes.html"><div class="category-item">Обувь</div></a>
+            <a href="electronics.html" class="category-item">Электроника</a>
+            <a href="clothes.html" class="category-item">Одежда</a>
+            <a href="food.html" class="category-item">Еда</a>
+            <a href="shoes.html" class="category-item">Обувь</a>
         </div>
     </section>
 
-    <!-- Новости и события -->
-    <section class="news" id="events">
-        <div class="news-item">
-            <!-- <img src="img/Скидка3.png" alt="Скидка" class="news-image"> -->
+    <section class="featured-products">
+        <h2 class="section-title">Топ предложения</h2>
+        <div class="product-container">
+            <div class="product-row">
+                <div class="product-card electronics">
+                    <img src="img/samsung.png" alt="Samsung Galaxy S24 Ultra">
+                    <h3>Samsung Galaxy S24 Ultra</h3>
+                    <p class="price">14,999c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Samsung Galaxy S24 Ultra', 14999, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="img/Apple.png" alt="Apple MacBook Pro">
+                    <h3>Apple MacBook Pro</h3>
+                    <p class="price">12,999c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Apple MacBook Pro', 12999, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card electronics">
+                    <img src="img/Sony.png" alt="Sony WH-1000XM4">
+                    <h3>Sony WH-1000XM4</h3>
+                    <p class="price">3,499 TJS</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Sony WH-1000XM4', 3499, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-row">
+                <div class="product-card clothes">
+                    <img src="img/clothes1.jpg" alt="Футболка Nike">
+                    <h3>Футболка Nike</h3>
+                    <p class="price">199c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Футболка Nike', 199, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card clothes">
+                    <img src="img/clothes2.jpg" alt="Джинсы Levi's">
+                    <h3>Джинсы Levi's</h3>
+                    <p class="price">499c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Джинсы Levi\'s', 499, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card clothes">
+                    <img src="img/clothes3.jpg" alt="Куртка Zara">
+                    <h3>Куртка Zara</h3>
+                    <p class="price">799c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Куртка Zara', 799, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-row">
+                <div class="product-card food">
+                    <img src="img/food1.jpg" alt="Пицца Маргарита">
+                    <h3>Пицца Маргарита</h3>
+                    <p class="price">129c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Пицца Маргарита', 129, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="img/food2.jpg" alt="Суши Филадельфия">
+                    <h3>Суши Филадельфия</h3>
+                    <p class="price">89c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Суши Филадельфия', 89, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card food">
+                    <img src="img/food3.jpg" alt="Бургер Классик">
+                    <h3>Бургер Классик</h3>
+                    <p class="price">69c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Бургер Классик', 69, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-row">
+                <div class="product-card shoes">
+                    <img src="img/shoes1.jpg" alt="Кроссовки Nike">
+                    <h3>Кроссовки Nike</h3>
+                    <p class="price">599c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Кроссовки Nike', 599, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card shoes">
+                    <img src="img/shoes2.jpg" alt="Кроссовки Adidas">
+                    <h3>Кроссовки Adidas</h3>
+                    <p class="price">649c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Кроссовки Adidas', 649, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="product-card shoes">
+                    <img src="img/shoes3.jpg" alt="Ботинки Timberland">
+                    <h3>Ботинки Timberland</h3>
+                    <p class="price">799c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Ботинки Timberland', 799, this)">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Футер -->
-    <footer id="contacts">
+    <footer>
         <div class="footer-info">
             <p>Адрес: г.Худжанд, ул. И.Сомони, 123</p>
-            <p>Часы работы: 24/7</p>
-            <p>Телефон: +992 788 78 4040</p>
             <p>Email: info@shoppingcenter.ru</p>
-            <p>Социальные сети: <a class="contacts" href="https://t.me/dilshodjon_avezov">Telegram</a> | <a href="https://www.instagram.com/dilshodjon_avezov?igsh=MTV3YTVoY3JjNjF1aw==">Instagram</a></p>
+            <p>Социальные сети: <a href="https://t.me/dilshodjon_avezov">Telegram</a> | <a href="https://www.instagram.com/dilshodjon_avezov?igsh=MTV3YTVoY3JjNjF1aw==">Instagram</a></p>
         </div>
-        <p>© 2024 Торговый Центр</p>
+        <p>© 2025 Торговый Центр</p>
     </footer>
     <script src="cart.js"></script>
+</body>
+</html>

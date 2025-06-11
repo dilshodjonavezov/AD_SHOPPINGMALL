@@ -8,9 +8,6 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>Торговый Центр</h1>
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Главная</a></li>
@@ -22,103 +19,52 @@
         </nav>
     </header>
 
-    <section class="products">
-        <h2>Еда</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="img/food1.jpg" alt="Пицца Маргарита">
-                <h3>Пицца Маргарита</h3>
-                <p>Свежие ингредиенты и насыщенный вкус.</p>
-                <p class="price">Цена: 129c</p>
-                <div class="cart-controls">
-                    <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Пицца Маргарита', 129, this)">Добавить в корзину</button>
+    <section class="featured-products">
+        <h2 class="section-title">Еда</h2>
+        <div class="product-container">
+            <div class="product-grid">
+                <div class="product-card food">
+                    <img src="img/food1.jpg" alt="Пицца Маргарита">
+                    <h3>Пицца Маргарита</h3>
+                    <p>Свежие ингредиенты и вкус.</p>
+                    <p class="price">Цена: 129c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Пицца Маргарита', 129, this)">Добавить в корзину</button>
+                    </div>
                 </div>
-            </div>
-            <div class="product-card">
-                <img src="img/food2.jpg" alt="Суши Филадельфия">
-                <h3>Суши Филадельфия</h3>
-                <p>Роллы с лососем и сливочным сыром.</p>
-                <p class="price">Цена: 89c</p>
-                <div class="cart-controls">
-                    <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Суши Филадельфия', 89, this)">Добавить в корзину</button>
+                <div class="product-card food">
+                    <img src="img/food2.jpg" alt="Суши Филадельфия">
+                    <h3>Суши Филадельфия</h3>
+                    <p>Роллы с лососем.</p>
+                    <p class="price">Цена: 89c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Суши Филадельфия', 89, this)">Добавить в корзину</button>
+                    </div>
                 </div>
-            </div>
-            <div class="product-card">
-                <img src="img/food3.jpg" alt="Бургер Классик">
-                <h3>Бургер Классик</h3>
-                <p>Говяжья котлета, свежие овощи и соус.</p>
-                <p class="price">Цена: 69c</p>
-                <div class="cart-controls">
-                    <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Бургер Классик', 69, this)">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img/food4.jpg" alt="Паста Карбонара">
-                <h3>Паста Карбонара</h3>
-                <p>Спагетти с беконом и сливочным соусом.</p>
-                <p class="price">Цена: 109c</p>
-                <div class="cart-controls">
-                    <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Паста Карбонара', 109, this)">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img/food5.jpg" alt="Стейк Рибай">
-                <h3>Стейк Рибай</h3>
-                <p>Сочный стейк с гарниром из овощей.</p>
-                <p class="price">Цена: 199c</p>
-                <div class="cart-controls">
-                    <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Стейк Рибай', 199, this)">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img/food6.jpg" alt="Салат Цезарь">
-                <h3>Салат Цезарь</h3>
-                <p>Курица, салат айсберг, пармезан и соус.</p>
-                <p class="price">Цена: 79c</p>
-                <div class="cart-controls">
-                    <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Салат Цезарь', 79, this)">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img/food7.jpg" alt="Том Ям Суп">
-                <h3>Том Ям</h3>
-                <p>Острый тайский суп с креветками и кокосовым молоком.</p>
-                <p class="price">Цена: 119c</p>
-                <div class="cart-controls">
-                    <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Том Ям', 119, this)">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img/food8.jpg" alt="Шашлык из курицы">
-                <h3>Шашлык из курицы</h3>
-                <p>Маринованное мясо, приготовленное на углях.</p>
-                <p class="price">Цена: 99c</p>
-                <div class="cart-controls">
-                    <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Шашлык из курицы', 99, this)">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img/food9.jpg" alt="Десерт Тирамису">
-                <h3>Тирамису</h3>
-                <p>Легкий итальянский десерт с кофе и маскарпоне.</p>
-                <p class="price">Цена: 59c</p>
-                <div class="cart-controls">
-                    <input type="number" class="quantity" min="1" value="1">
-                    <button onclick="addToCart('Тирамису', 59, this)">Добавить в корзину</button>
+                <div class="product-card food">
+                    <img src="img/food3.jpg" alt="Бургер Классик">
+                    <h3>Бургер Классик</h3>
+                    <p>Говяжья котлета и соус.</p>
+                    <p class="price">Цена: 69c</p>
+                    <div class="cart-controls">
+                        <input type="number" class="quantity" min="1" value="1">
+                        <button onclick="addToCart('Бургер Классик', 69, this)">Добавить в корзину</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2024 Торговый Центр</p>
+        <div class="footer-info">
+            <p>Адрес: г.Худжанд, ул. И.Сомони, 123</p>
+            <p>Email: info@shoppingcenter.ru</p>
+            <p>Социальные сети: <a href="https://t.me/dilshodjon_avezov">Telegram</a> | <a href="https://www.instagram.com/dilshodjon_avezov?igsh=MTV3YTVoY3JjNjF1aw==">Instagram</a></p>
+        </div>
+        <p>© 2025 Торговый Центр</p>
     </footer>
     <script src="cart.js"></script>
+</body>
+</html>
